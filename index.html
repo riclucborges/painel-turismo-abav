@@ -1,589 +1,557 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2639
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;\f1\fnil\fcharset0 AppleColorEmoji;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\paperw11900\paperh16840\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx566\tx1133\tx1700\tx2267\tx2834\tx3401\tx3968\tx4535\tx5102\tx5669\tx6236\tx6803\pardirnatural\partightenfactor0
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visão Estratégica para o Turismo no Brasil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Chosen Palette: Serene Brazil -->
+    <!-- Application Structure Plan: A aplicação foi estruturada em seções temáticas para criar um fluxo narrativo lógico e exploratório. Começa com a visão macro de Lummertz até detalhes operacionais. -->
+    <!-- Visualization & Content Choices:
+        1. Visão de Lummertz: Goal: Inform/Engage. Method: Bloco de texto com citação de destaque. Justification: Estabelece a autoridade e o argumento central da análise.
+        2. Diagnóstico e Caminhos: Goal: Organize/Compare. Method: Cards interativos em grid (HTML/CSS/JS). Justification: Permite ao usuário explorar múltiplos desafios e soluções de forma dinâmica.
+        3. Diagrama Ecossistêmico: Goal: Organize/Relationships. Method: Diagrama construído com HTML/CSS (Flexbox/Grid). Justification: Traduz o conceito teórico de Beni & Moesch em uma representação visual clara.
+        4. Desempenho do Turismo: Goal: Compare/Inform. Method: Gráfico de barras com Chart.js. Justification: Compara o desempenho do Brasil com outros países, quantificando o "potencial inexplorado".
+        5. Composição do Setor: Goal: Inform. Method: Gráfico de rosca com Chart.js. Justification: Demonstra a importância econômica do turismo de forma visualmente atraente e direta.
+        6. Quiz Interativo: Goal: Engage/Inform. Method: Charada gerada por IA (Gemini API) com filtro de assunto e imagem placeholder, revelando dados sobre estrangeiros no mercado de trabalho. Justification: Gamificação aumenta engajamento.
+        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 50vh;
+        }
+        .active-nav {
+            color: #E07A5F;
+            font-weight: 700;
+        }
+        .loading-spinner {
+            border: 4px solid rgba(0, 0, 0, 0.1);
+            border-left-color: #E07A5F;
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            animation: spin 1s linear infinite;
+            display: none;
+            margin: 20px auto;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'background': '#FDFBF7',
+                        'text': '#3D405B',
+                        'primary': '#8D9B6A',
+                        'secondary': '#E07A5F',
+                        'accent': '#F4F1DE',
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-text">
 
-\f0\fs24 \cf0 <!DOCTYPE html>\
-<html lang="pt-BR" class="scroll-smooth">\
-<head>\
-    <meta charset="UTF-8">\
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
-    <title>Vis\'e3o Estrat\'e9gica para o Turismo no Brasil</title>\
-    <script src="https://cdn.tailwindcss.com"></script>\
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>\
-    <link rel="preconnect" href="https://fonts.googleapis.com">\
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>\
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">\
-    <!-- Chosen Palette: Serene Brazil -->\
-    <!-- Application Structure Plan: A aplica\'e7\'e3o foi estruturada em se\'e7\'f5es tem\'e1ticas para criar um fluxo narrativo l\'f3gico e explorat\'f3rio. Come\'e7a com a vis\'e3o macro de Lummertz (O Potencial) para engajar o usu\'e1rio. Em seguida, aprofunda-se nos problemas (Diagn\'f3stico) e nas solu\'e7\'f5es propostas (Caminhos para o Futuro), utilizando cart\'f5es interativos para detalhar cada ponto. A se\'e7\'e3o Ecossistema (Beni & Moesch) fornece a base te\'f3rica, visualizada atrav\'e9s de um diagrama em HTML/CSS para facilitar a compreens\'e3o de um conceito complexo. Finalmente, a se\'e7\'e3o de Dados Atuais ancora a discuss\'e3o em n\'fameros concretos com gr\'e1ficos interativos. A nova se\'e7\'e3o "Quiz Interativo" oferece uma forma l\'fadica de engajamento, revelando dados espec\'edficos ap\'f3s a intera\'e7\'e3o. A navega\'e7\'e3o fixa permite ao usu\'e1rio explorar os temas livremente, promovendo uma experi\'eancia n\'e3o-linear e centrada no usu\'e1rio, mais eficaz do que um relat\'f3rio tradicional para a s\'edntese de informa\'e7\'f5es complexas. -->\
-    <!-- Visualization & Content Choices:\
-        1. Vis\'e3o de Lummertz: Goal: Inform/Engage. Method: Bloco de texto com cita\'e7\'e3o de destaque. Justification: Estabelece a autoridade e o argumento central da an\'e1lise.\
-        2. Diagn\'f3stico e Caminhos: Goal: Organize/Compare. Method: Cards interativos em grid (HTML/CSS/JS). Justification: Permite ao usu\'e1rio explorar m\'faltiplos desafios e solu\'e7\'f5es de forma organizada e sob demanda, evitando sobrecarga de informa\'e7\'e3o e tornando a compara\'e7\'e3o mais direta.\
-        3. Diagrama Ecossist\'eamico: Goal: Organize/Relationships. Method: Diagrama constru\'eddo com HTML/CSS (Flexbox/Grid). Justification: Traduz o conceito te\'f3rico de Beni & Moesch em uma representa\'e7\'e3o visual clara e f\'e1cil de assimilar, mostrando as interconex\'f5es do setor.\
-        4. Desempenho do Turismo: Goal: Compare/Inform. Method: Gr\'e1fico de barras com Chart.js. Justification: Compara o desempenho do Brasil com outros pa\'edses, quantificando o "potencial inexplorado" citado por Lummertz de forma impactante.\
-        5. Composi\'e7\'e3o do Setor: Goal: Inform. Method: Gr\'e1fico de rosca com Chart.js. Justification: Demonstra a import\'e2ncia econ\'f4mica do turismo de forma visualmente atraente e direta.\
-        6. Quiz Interativo: Goal: Engage/Inform. Method: Charada gerada por IA (Gemini API) com filtro de assunto e imagem placeholder, revelando dados sobre estrangeiros no mercado de trabalho. Justification: Oferece uma intera\'e7\'e3o divertida e personalizada, culminando na apresenta\'e7\'e3o de um dado espec\'edfico de forma memor\'e1vel.\
-        CONFIRMATION: NO SVG graphics used. NO Mermaid JS used. -->\
-    <style>\
-        body \{\
-            font-family: 'Poppins', sans-serif;\
-        \}\
-        .chart-container \{\
-            position: relative;\
-            width: 100%;\
-            max-width: 700px;\
-            margin-left: auto;\
-            margin-right: auto;\
-            height: 400px;\
-            max-height: 50vh;\
-        \}\
-        .active-nav \{\
-            color: #E07A5F;\
-            font-weight: 700;\
-        \}\
-        .loading-spinner \{\
-            border: 4px solid rgba(0, 0, 0, 0.1);\
-            border-left-color: #E07A5F;\
-            border-radius: 50%;\
-            width: 30px;\
-            height: 30px;\
-            animation: spin 1s linear infinite;\
-            display: none;\
-            margin: 20px auto;\
-        \}\
-        @keyframes spin \{\
-            0% \{ transform: rotate(0deg); \}\
-            100% \{ transform: rotate(360deg); \}\
-        \}\
-    </style>\
-    <script>\
-        tailwind.config = \{\
-            theme: \{\
-                extend: \{\
-                    colors: \{\
-                        'background': '#FDFBF7',\
-                        'text': '#3D405B',\
-                        'primary': '#8D9B6A',\
-                        'secondary': '#E07A5F',\
-                        'accent': '#F4F1DE',\
-                    \}\
-                \}\
-            \}\
-        \}\
-    </script>\
-</head>\
-<body class="bg-background text-text">\
-\
-    <header class="bg-background/80 backdrop-blur-sm shadow-md sticky top-0 z-50">\
-        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">\
-            <h1 class="text-xl font-bold text-primary">Turismo Brasil | An\'e1lise 2020-2024</h1>\
-            <div class="hidden md:flex space-x-8">\
-                <a href="#home" class="nav-link">Vis\'e3o Geral</a>\
-                <a href="#diagnostico" class="nav-link">Diagn\'f3stico</a>\
-                <a href="#caminhos" class="nav-link">Caminhos</a>\
-                <a href="#ecossistema" class="nav-link">Ecossistema</a>\
-                <a href="#dados" class="nav-link">Dados Atuais</a>\
-                <a href="#quiz" class="nav-link">Quiz Interativo</a>\
-            </div>\
-            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md">\
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">\
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />\
-                </svg>\
-            </button>\
-        </nav>\
-        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">\
-            <a href="#home" class="block py-2 nav-link">Vis\'e3o Geral</a>\
-            <a href="#diagnostico" class="block py-2 nav-link">Diagn\'f3stico</a>\
-            <a href="#caminhos" class="block py-2 nav-link">Caminhos</a>\
-            <a href="#ecossistema" class="block py-2 nav-link">Ecossistema</a>\
-            <a href="#dados" class="block py-2 nav-link">Dados Atuais</a>\
-            <a href="#quiz" class="block py-2 nav-link">Quiz Interativo</a>\
-        </div>\
-    </header>\
-\
-    <main class="container mx-auto p-6">\
-\
-        <section id="home" class="min-h-screen flex items-center justify-center text-center pt-16">\
-            <div class="max-w-4xl">\
-                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">O Potencial Inexplorado do Turismo Brasileiro</h2>\
-                <p class="text-lg text-gray-700 mb-8">\
-                    Esta an\'e1lise explora a vis\'e3o de Vin\'edcius Lummertz para o turismo brasileiro entre 2020 e a data atual. Examinamos seus diagn\'f3sticos sobre os entraves estruturais e os objetivos tra\'e7ados para transformar o Brasil em uma pot\'eancia tur\'edstica global, conectando sua perspectiva com a teoria do turismo como um ecossistema complexo e os dados mais recentes do setor.\
-                </p>\
-                <div class="bg-accent p-6 rounded-lg shadow-inner">\
-                    <p class="text-xl italic text-text font-semibold">"Onde h\'e1 turismo, n\'e3o h\'e1 desemprego. O mundo inteiro j\'e1 aprendeu isso. H\'e1 uma corrida mundial pelos empregos do turismo, e n\'f3s temos esse potencial excepcional. Mas \'e9 preciso ter coragem para rompermos com aquelas amarras que nos ancoram ao passado."</p>\
-                    <p class="text-right mt-2 font-bold">- Vin\'edcius Lummertz</p>\
-                </div>\
-            </div>\
-        </section>\
-\
-        <section id="diagnostico" class="py-20">\
-            <div class="text-center mb-12">\
-                <h2 class="text-3xl font-bold text-primary">Diagn\'f3stico: Os Entraves ao Desenvolvimento</h2>\
-                <p class="max-w-3xl mx-auto mt-4 text-gray-600">\
-                    Vin\'edcius Lummertz consistentemente aponta uma s\'e9rie de desafios estruturais que limitam o potencial do Brasil. Estes n\'e3o s\'e3o problemas isolados, mas sim barreiras interconectadas que exigem uma abordagem estrat\'e9gica e corajosa. Explore os principais pontos do diagn\'f3stico clicando nos cart\'f5es abaixo.\
-                </p>\
-            </div>\
-            <div id="challenges-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">\
-            </div>\
-        </section>\
-\
-        <section id="caminhos" class="py-20 bg-accent rounded-lg">\
-            <div class="text-center mb-12">\
-                <h2 class="text-3xl font-bold text-primary">Caminhos para o Futuro: Objetivos Estrat\'e9gicos</h2>\
-                 <p class="max-w-3xl mx-auto mt-4 text-gray-600">\
-                    Para superar os desafios, Lummertz prop\'f5e um conjunto de objetivos focados em moderniza\'e7\'e3o, abertura de mercado e cria\'e7\'e3o de um ambiente de neg\'f3cios favor\'e1vel. As solu\'e7\'f5es visam n\'e3o apenas a recupera\'e7\'e3o p\'f3s-pandemia, mas uma transforma\'e7\'e3o estrutural do setor.\
-                </p>\
-            </div>\
-            <div id="solutions-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">\
-            </div>\
-        </section>\
-        \
-        <section id="ecossistema" class="py-20">\
-            <div class="text-center mb-16">\
-                <h2 class="text-3xl font-bold text-primary">A Vis\'e3o Ecossist\'eamica do Turismo</h2>\
-                <p class="max-w-3xl mx-auto mt-4 text-gray-600">\
-                    A complexidade defendida por Lummertz alinha-se \'e0 concep\'e7\'e3o de turismo como um ecossistema, popularizada no Brasil por te\'f3ricos como M\'e1rio Carlos Beni e Marutschka Moesch. Essa vis\'e3o abandona a ideia de uma cadeia linear e entende o turismo como um sistema aberto e complexo, onde m\'faltiplos componentes interagem e se influenciam mutuamente.\
-                </p>\
-            </div>\
-            <div class="flex flex-col md:flex-row items-center justify-center gap-8 p-6 bg-white shadow-lg rounded-lg">\
-                <div class="w-full p-4 bg-primary text-white rounded-lg text-center">\
-                    <h3 class="font-bold text-xl">SISTUR (Sistema de Turismo)</h3>\
-                </div>\
-                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 text-center">\
-                    <div class="p-4 bg-secondary text-white rounded-lg shadow-md">\
-                        <h4 class="font-semibold">Conjunto das Rela\'e7\'f5es Ambientais</h4>\
-                        <p class="text-sm">Social, Econ\'f4mico, Pol\'edtico, Ecol\'f3gico, Cultural</p>\
-                    </div>\
-                    <div class="p-4 bg-accent text-text rounded-lg shadow-md">\
-                        <h4 class="font-semibold">Conjunto da Organiza\'e7\'e3o Estrutural</h4>\
-                        <p class="text-sm">Mercado, Oferta, Demanda, Distribui\'e7\'e3o</p>\
-                    </div>\
-                    <div class="p-4 bg-accent text-text rounded-lg shadow-md">\
-                        <h4 class="font-semibold">Conjunto das A\'e7\'f5es Operacionais</h4>\
-                        <p class="text-sm">Promo\'e7\'e3o, Fomento, Planejamento, Gest\'e3o</p>\
-                    </div>\
-                     <div class="p-4 bg-secondary text-white rounded-lg shadow-md">\
-                        <h4 class="font-semibold">Infraestrutura</h4>\
-                        <p class="text-sm">B\'e1sica e de Apoio ao Turismo</p>\
-                    </div>\
-                </div>\
-            </div>\
-             <p class="mt-8 text-center max-w-3xl mx-auto text-gray-600">\
-                Os desafios apontados por Lummertz, como burocracia (Rela\'e7\'f5es Ambientais - Pol\'edtico) e falta de infraestrutura, impactam todo o sistema. As solu\'e7\'f5es, como a melhoria do ambiente de neg\'f3cios (Organiza\'e7\'e3o Estrutural - Mercado) e a atra\'e7\'e3o de investimentos (A\'e7\'f5es Operacionais - Fomento), buscam fortalecer o ecossistema como um todo, gerando um ciclo virtuoso de desenvolvimento.\
-            </p>\
-        </section>\
-\
-        <section id="dados" class="py-20">\
-            <div class="text-center mb-12">\
-                <h2 class="text-3xl font-bold text-primary">O Turismo Brasileiro em N\'fameros</h2>\
-                <p class="max-w-3xl mx-auto mt-4 text-gray-600">\
-                    Os dados do per\'edodo p\'f3s-pandemia mostram uma recupera\'e7\'e3o, principalmente impulsionada pelo turismo dom\'e9stico. No entanto, ao comparar com pot\'eancias globais e regionais, o potencial de crescimento do Brasil no cen\'e1rio internacional torna-se evidente, validando a urg\'eancia das reformas defendidas por Lummertz.\
-                </p>\
-            </div>\
-            <div class="grid lg:grid-cols-2 gap-12 items-center">\
-                <div>\
-                    <h3 class="text-xl font-semibold text-center mb-4 text-secondary">Chegadas de Turistas Internacionais (Pr\'e9-Pandemia)</h3>\
-                    <div class="chart-container">\
-                        <canvas id="internationalArrivalsChart"></canvas>\
-                    </div>\
-                </div>\
-                <div>\
-                    <h3 class="text-xl font-semibold text-center mb-4 text-secondary">Contribui\'e7\'e3o do Turismo no PIB (Estimativa)</h3>\
-                    <div class="chart-container">\
-                        <canvas id="pibContributionChart"></canvas>\
-                    </div>\
-                </div>\
-            </div>\
-        </section>\
-\
-        <section id="quiz" class="py-20 bg-accent rounded-lg">\
-            <div class="text-center mb-12">\
-                <h2 class="text-3xl font-bold text-primary">Quiz Interativo: Desvende o Brasil!</h2>\
-                <p class="max-w-3xl mx-auto mt-4 text-gray-600">\
-                    Teste seus conhecimentos sobre o Brasil com uma charada divertida! Escolha um assunto, tente adivinhar e, como recompensa, descubra um dado interessante sobre o mercado de trabalho no pa\'eds.\
-                </p>\
-            </div>\
-            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">\
-                <div class="mb-6">\
-                    <label for="subject-filter" class="block text-lg font-semibold text-text mb-2">Escolha um assunto:</label>\
-                    <select id="subject-filter" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">\
-                        <option value="">Selecione um assunto</option>\
-                        <option value="m\'fasica">M\'fasica</option>\
-                        <option value="esportes">Esportes</option>\
-                        <option value="neg\'f3cios">Neg\'f3cios</option>\
-                        <option value="feiras">Feiras e Eventos</option>\
-                        <option value="religioso">Religioso</option>\
-                        <option value="outros">Outros</option>\
-                    </select>\
-                </div>\
-\
-                <div class="text-center mb-6">\
-                    <button id="generate-riddle-btn" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors duration-300 disabled:opacity-50" disabled>Gerar Charada</button>\
-                </div>\
-\
-                <div id="quiz-content" class="hidden">\
-                    <div class="loading-spinner"></div>\
-                    <div class="text-center mb-6">\
-                        <img id="quiz-image" src="" alt="Imagem relacionada \'e0 charada" class="w-full h-48 object-cover rounded-md mb-4 mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/400x300/F4F1DE/3D405B?text=Imagem+indispon\'edvel';">\
-                        <p id="riddle-text" class="text-xl font-semibold text-text mb-4"></p>\
-                    </div>\
-                    <div class="mb-6">\
-                        <input type="text" id="user-answer" placeholder="Sua resposta aqui..." class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary">\
-                    </div>\
-                    <div class="text-center">\
-                        <button id="reveal-answer-btn" class="bg-secondary text-white px-6 py-3 rounded-md hover:bg-secondary/90 transition-colors duration-300">Revelar Resposta e Dados</button>\
-                    </div>\
-                </div>\
-\
-                <div id="quiz-result" class="mt-8 p-4 bg-gray-100 rounded-md hidden">\
-                    <p id="answer-reveal" class="text-lg font-semibold text-primary mb-2"></p>\
-                    <p id="foreigners-data" class="text-lg font-semibold text-text"></p>\
-                </div>\
-            </div>\
-        </section>\
-\
-    </main>\
-\
-    <footer class="bg-text text-white py-6 text-center">\
-        <p>An\'e1lise Interativa &copy; 2024. Desenvolvido como uma ferramenta de s\'edntese e visualiza\'e7\'e3o de dados.</p>\
-    </footer>\
-\
-    <script>\
-        document.addEventListener('DOMContentLoaded', function () \{\
-            const challenges = [\
-                \{\
-                    title: 'Burocracia e "Custo Brasil"',\
-                    icon: '
-\f1 \uc0\u9878 \u65039 
-\f0 ',\
-                    description: 'Legisla\'e7\'e3o complexa, alta carga tribut\'e1ria (como o IOF) e a inseguran\'e7a jur\'eddica afastam investimentos e encarecem a opera\'e7\'e3o tur\'edstica, diminuindo a competitividade.'\
-                \},\
-                \{\
-                    title: 'Falta de Estrat\'e9gia Cont\'ednua',\
-                    icon: '
-\f1 \uc0\u55357 \u56826 \u65039 
-\f0 ',\
-                    description: 'A aus\'eancia de um plano de Estado de longo prazo, resistente a mudan\'e7as de governo, impede a consolida\'e7\'e3o de uma pol\'edtica tur\'edstica robusta e a execu\'e7\'e3o de projetos estruturantes.'\
-                \},\
-                \{\
-                    title: 'Infraestrutura Deficiente',\
-                    icon: '
-\f1 \uc0\u55356 \u57303 \u65039 
-\f0 ',\
-                    description: 'Apesar dos avan\'e7os, a infraestrutura de acesso, como aeroportos regionais e estradas, e a de atrativos, como parques nacionais, ainda \'e9 inadequada para o potencial do pa\'eds.'\
-                \},\
-                \{\
-                    title: 'Atraso na Moderniza\'e7\'e3o',\
-                    icon: '
-\f1 \uc0\u55357 \u56688 \u65039 
-\f0 ',\
-                    description: 'O Brasil se mant\'e9m conservador em pautas j\'e1 consolidadas em outros pa\'edses, como a regulamenta\'e7\'e3o de resorts integrados (cassinos), que poderiam ser grandes polos de atra\'e7\'e3o de investimentos e turistas.'\
-                \},\
-                \{\
-                    title: 'Promo\'e7\'e3o Internacional T\'edmida',\
-                    icon: '
-\f1 \uc0\u55357 \u56546 
-\f0 ',\
-                    description: 'O investimento em promo\'e7\'e3o e marketing do Brasil no exterior \'e9 baixo comparado a outros pa\'edses, resultando em um desconhecimento das diversas ofertas tur\'edsticas brasileiras.'\
-                \},\
-                \{\
-                    title: 'Inseguran\'e7a',\
-                    icon: '
-\f1 \uc0\u55357 \u57057 \u65039 
-\f0 ',\
-                    description: 'A percep\'e7\'e3o de inseguran\'e7a \'e9 um dos maiores detratores da imagem do Brasil no exterior, impactando diretamente a decis\'e3o de viagem de turistas internacionais.'\
-                \}\
-            ];\
-\
-            const solutions = [\
-                \{\
-                    title: 'Melhorar Ambiente de Neg\'f3cios',\
-                    icon: '
-\f1 \uc0\u55358 \u56605 
-\f0 ',\
-                    description: 'Simplificar a legisla\'e7\'e3o, realizar reformas estruturais e reduzir a carga tribut\'e1ria para atrair capital estrangeiro e nacional, tornando o setor mais din\'e2mico e competitivo.'\
-                \},\
-                \{\
-                    title: 'Concess\'f5es e Privatiza\'e7\'f5es',\
-                    icon: '
-\f1 \uc0\u55356 \u57310 \u65039 
-\f0 ',\
-                    description: 'Acelerar a concess\'e3o de parques nacionais e a privatiza\'e7\'e3o de aeroportos e outros ativos tur\'edsticos para a iniciativa privada, garantindo investimentos em infraestrutura e gest\'e3o profissional.'\
-                \},\
-                \{\
-                    title: 'Abertura de Mercado',\
-                    icon: '
-\f1 \uc0\u9992 \u65039 
-\f0 ',\
-                    description: 'Permitir 100% de capital estrangeiro em companhias a\'e9reas e incentivar a entrada de novas empresas, aumentando a concorr\'eancia, a conectividade e reduzindo o pre\'e7o das passagens.'\
-                \},\
-                \{\
-                    title: 'Visto Eletr\'f4nico e Facilita\'e7\'e3o',\
-                    icon: '
-\f1 \uc0\u55357 \u56516 
-\f0 ',\
-                    description: 'Expandir o programa de vistos eletr\'f4nicos para mais pa\'edses estrat\'e9gicos e reduzir as barreiras de entrada para turistas, uma medida de baixo custo e alto impacto.'\
-                \},\
-                \{\
-                    title: 'Foco na "Economia do Visitante"',\
-                    icon: '
-\f1 \uc0\u55357 \u57037 \u65039 
-\f0 ',\
-                    description: 'Ampliar o conceito de turismo para "economia do visitante", englobando cultura, eventos, neg\'f3cios e sa\'fade, para desenvolver uma cadeia produtiva mais ampla e resiliente.'\
-                \},\
-                \{\
-                    title: 'Desenvolvimento Regional Integrado',\
-                    icon: '
-\f1 \uc0\u55356 \u57104 
-\f0 ',\
-                    description: 'Promover o desenvolvimento n\'e3o apenas por munic\'edpio, mas por regi\'f5es tur\'edsticas coesas, que compartilham infraestrutura e identidade, fortalecendo os destinos de forma conjunta.'\
-                \}\
-            ];\
-\
-            const challengesGrid = document.getElementById('challenges-grid');\
-            challenges.forEach(item => \{\
-                const card = document.createElement('div');\
-                card.className = 'bg-white p-6 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300';\
-                card.innerHTML = `\
-                    <div class="flex items-center mb-3">\
-                        <span class="text-4xl mr-4">$\{item.icon\}</span>\
-                        <h3 class="text-lg font-bold text-primary">$\{item.title\}</h3>\
-                    </div>\
-                    <p class="text-gray-600 text-sm hidden">$\{item.description\}</p>\
-                `;\
-                challengesGrid.appendChild(card);\
-            \});\
-            \
-            const solutionsGrid = document.getElementById('solutions-grid');\
-            solutions.forEach(item => \{\
-                const card = document.createElement('div');\
-                card.className = 'bg-white p-6 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300';\
-                card.innerHTML = `\
-                    <div class="flex items-center mb-3">\
-                        <span class="text-4xl mr-4">$\{item.icon\}</span>\
-                        <h3 class="text-lg font-bold text-primary">$\{item.title\}</h3>\
-                    </div>\
-                    <p class="text-gray-600 text-sm hidden">$\{item.description\}</p>\
-                `;\
-                solutionsGrid.appendChild(card);\
-            \});\
-\
-            document.querySelectorAll('#challenges-grid > div, #solutions-grid > div').forEach(card => \{\
-                card.addEventListener('click', () => \{\
-                    card.querySelector('p').classList.toggle('hidden');\
-                \});\
-            \});\
-\
-            const mobileMenuButton = document.getElementById('mobile-menu-button');\
-            const mobileMenu = document.getElementById('mobile-menu');\
-            mobileMenuButton.addEventListener('click', () => \{\
-                mobileMenu.classList.toggle('hidden');\
-            \});\
-            \
-            document.querySelectorAll('.nav-link').forEach(link => \{\
-                link.addEventListener('click', () => \{\
-                    if(!mobileMenu.classList.contains('hidden'))\{\
-                        mobileMenu.classList.add('hidden');\
-                    \}\
-                \});\
-            \});\
-\
-\
-            const internationalArrivalsCtx = document.getElementById('internationalArrivalsChart').getContext('2d');\
-            new Chart(internationalArrivalsCtx, \{\
-                type: 'bar',\
-                data: \{\
-                    labels: ['Fran\'e7a', 'Espanha', 'EUA', 'M\'e9xico', 'Argentina', 'Brasil'],\
-                    datasets: [\{\
-                        label: 'Chegadas de Turistas Internacionais (em milh\'f5es)',\
-                        data: [89.4, 83.7, 79.3, 45.0, 7.3, 6.3],\
-                        backgroundColor: '#8D9B6A',\
-                        borderColor: '#3D405B',\
-                        borderWidth: 1\
-                    \}]\
-                \},\
-                options: \{\
-                    responsive: true,\
-                    maintainAspectRatio: false,\
-                    indexAxis: 'y',\
-                    scales: \{\
-                        x: \{\
-                            beginAtZero: true\
-                        \}\
-                    \},\
-                    plugins: \{\
-                        legend: \{\
-                            display: false\
-                        \},\
-                        title: \{\
-                            display: true,\
-                            text: 'Fonte: OMT (Dados de 2019, pr\'e9-pandemia)'\
-                        \}\
-                    \}\
-                \}\
-            \});\
-\
-            const pibContributionCtx = document.getElementById('pibContributionChart').getContext('2d');\
-            new Chart(pibContributionCtx, \{\
-                type: 'doughnut',\
-                data: \{\
-                    labels: ['Contribui\'e7\'e3o do Turismo', 'Outros Setores'],\
-                    datasets: [\{\
-                        label: 'Contribui\'e7\'e3o para o PIB',\
-                        data: [7.7, 92.3],\
-                        backgroundColor: ['#E07A5F', '#F4F1DE'],\
-                        borderColor: ['#3D405B', '#d1ccc0'],\
-                        borderWidth: 1\
-                    \}]\
-                \},\
-                options: \{\
-                    responsive: true,\
-                    maintainAspectRatio: false,\
-                     plugins: \{\
-                        legend: \{\
-                           position: 'top',\
-                        \},\
-                        title: \{\
-                            display: true,\
-                            text: 'Contribui\'e7\'e3o Direta e Indireta do Turismo no PIB do Brasil (%)'\
-                        \}\
-                    \}\
-                \}\
-            \});\
-            \
-            const sections = document.querySelectorAll('section');\
-            const navLinks = document.querySelectorAll('.nav-link');\
-\
-            const observer = new IntersectionObserver((entries) => \{\
-                entries.forEach(entry => \{\
-                    if (entry.isIntersecting) \{\
-                        navLinks.forEach(link => \{\
-                            link.classList.remove('active-nav');\
-                            if (link.getAttribute('href').substring(1) === entry.target.id) \{\
-                                link.classList.add('active-nav');\
-                            \}\
-                        \});\
-                    \}\
-                \});\
-            \}, \{ rootMargin: "-50% 0px -50% 0px" \});\
-\
-            sections.forEach(section => \{\
-                observer.observe(section);\
-            \});\
-\
-            // Quiz Interativo Logic\
-            const subjectFilter = document.getElementById('subject-filter');\
-            const generateRiddleBtn = document.getElementById('generate-riddle-btn');\
-            const quizContent = document.getElementById('quiz-content');\
-            const quizImage = document.getElementById('quiz-image');\
-            const riddleText = document.getElementById('riddle-text');\
-            const userAnswer = document.getElementById('user-answer');\
-            const revealAnswerBtn = document.getElementById('reveal-answer-btn');\
-            const quizResult = document.getElementById('quiz-result');\
-            const answerReveal = document.getElementById('answer-reveal');\
-            const foreignersData = document.getElementById('foreigners-data');\
-            const loadingSpinner = document.querySelector('.loading-spinner');\
-\
-            const quizSubjects = \{\
-                'm\'fasica': \{\
-                    imagePrompt: 'Carnaval do Rio de Janeiro - ilustra\'e7\'e3o vetorial minimalista',\
-                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Carnaval+Rio',\
-                    answer: 'Carnaval'\
-                \},\
-                'esportes': \{\
-                    imagePrompt: 'Est\'e1dio de futebol brasileiro - ilustra\'e7\'e3o vetorial minimalista',\
-                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Estadio+Futebol',\
-                    answer: 'Futebol'\
-                \},\
-                'neg\'f3cios': \{\
-                    imagePrompt: 'Skyline de S\'e3o Paulo - ilustra\'e7\'e3o vetorial minimalista',\
-                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Sao+Paulo+Negocios',\
-                    answer: 'Feira de Neg\'f3cios'\
-                \},\
-                'feiras': \{\
-                    imagePrompt: 'Centro de exposi\'e7\'f5es no Brasil - ilustra\'e7\'e3o vetorial minimalista',\
-                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Feira+Eventos',\
-                    answer: 'Feira Internacional'\
-                \},\
-                'religioso': \{\
-                    imagePrompt: 'Cristo Redentor - ilustra\'e7\'e3o vetorial minimalista',\
-                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Cristo+Redentor',\
-                    answer: 'Cristo Redentor'\
-                \},\
-                'outros': \{\
-                    imagePrompt: 'Cataratas do Igua\'e7u - ilustra\'e7\'e3o vetorial minimalista',\
-                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Cataratas+Iguacu',\
-                    answer: 'Amaz\'f4nia' // Mantendo a resposta gen\'e9rica para "outros"\
-                \}\
-            \};\
-\
-            subjectFilter.addEventListener('change', () => \{\
-                if (subjectFilter.value) \{\
-                    generateRiddleBtn.disabled = false;\
-                    quizContent.classList.add('hidden');\
-                    quizResult.classList.add('hidden');\
-                    userAnswer.value = '';\
-                \} else \{\
-                    generateRiddleBtn.disabled = true;\
-                \}\
-            \});\
-\
-            generateRiddleBtn.addEventListener('click', async () => \{\
-                const selectedSubject = subjectFilter.value;\
-                if (!selectedSubject) return;\
-\
-                quizContent.classList.remove('hidden');\
-                loadingSpinner.style.display = 'block';\
-                riddleText.textContent = '';\
-                quizImage.src = '';\
-                quizResult.classList.add('hidden');\
-                userAnswer.value = '';\
-                revealAnswerBtn.disabled = false;\
-\
-                const subjectInfo = quizSubjects[selectedSubject];\
-                quizImage.src = subjectInfo.imageUrl; // Usando a URL espec\'edfica da imagem\
-\
-                try \{\
-                    let chatHistory = [];\
-                    const prompt = `Crie uma charada divertida e curta sobre o tema "$\{selectedSubject\}" no contexto do Brasil. A charada deve ter uma resposta clara e ser no m\'e1ximo duas frases.`;\
-                    chatHistory.push(\{ role: "user", parts: [\{ text: prompt \}] \});\
-                    const payload = \{ contents: chatHistory \};\
-                    const apiKey = "";\
-                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=$\{apiKey\}`;\
-                    const response = await fetch(apiUrl, \{\
-                        method: 'POST',\
-                        headers: \{ 'Content-Type': 'application/json' \},\
-                        body: JSON.stringify(payload)\
-                    \});\
-                    const result = await response.json();\
-                    if (result.candidates && result.candidates.length > 0 &&\
-                        result.candidates[0].content && result.candidates[0].content.parts &&\
-                        result.candidates[0].content.parts.length > 0) \{\
-                        riddleText.textContent = result.candidates[0].content.parts[0].text;\
-                    \} else \{\
-                        riddleText.textContent = 'N\'e3o foi poss\'edvel gerar a charada. Tente novamente.';\
-                    \}\
-                \} catch (error) \{\
-                    console.error('Erro ao chamar a API do Gemini:', error);\
-                    riddleText.textContent = 'Erro ao carregar a charada. Verifique sua conex\'e3o ou tente mais tarde.';\
-                \} finally \{\
-                    loadingSpinner.style.display = 'none';\
-                \}\
-            \});\
-\
-            revealAnswerBtn.addEventListener('click', () => \{\
-                const selectedSubject = subjectFilter.value;\
-                const subjectInfo = quizSubjects[selectedSubject];\
-                \
-                answerReveal.textContent = `A resposta \'e9: $\{subjectInfo.answer\}!`;\
-                foreignersData.textContent = `Em 2024, o Brasil abriu cerca de 71.000 postos de trabalho formais (CLT) para estrangeiros no mercado de trabalho.`;\
-                quizResult.classList.remove('hidden');\
-                revealAnswerBtn.disabled = true;\
-            \});\
-        \});\
-    </script>\
-</body>\
-</html>\
-}
+    <header class="bg-background/80 backdrop-blur-sm shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <h1 class="text-xl font-bold text-primary">Turismo Brasil | Análise 2020-2024</h1>
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link">Visão Geral</a>
+                <a href="#diagnostico" class="nav-link">Diagnóstico</a>
+                <a href="#caminhos" class="nav-link">Caminhos</a>
+                <a href="#ecossistema" class="nav-link">Ecossistema</a>
+                <a href="#dados" class="nav-link">Dados Atuais</a>
+                <a href="#quiz" class="nav-link">Quiz Interativo</a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden p-2 rounded-md">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4">
+            <a href="#home" class="block py-2 nav-link">Visão Geral</a>
+            <a href="#diagnostico" class="block py-2 nav-link">Diagnóstico</a>
+            <a href="#caminhos" class="block py-2 nav-link">Caminhos</a>
+            <a href="#ecossistema" class="block py-2 nav-link">Ecossistema</a>
+            <a href="#dados" class="block py-2 nav-link">Dados Atuais</a>
+            <a href="#quiz" class="block py-2 nav-link">Quiz Interativo</a>
+        </div>
+    </header>
+
+    <main class="container mx-auto p-6">
+
+        <section id="home" class="min-h-screen flex items-center justify-center text-center pt-16">
+            <div class="max-w-4xl">
+                <h2 class="text-4xl md:text-5xl font-bold text-primary mb-4">O Potencial Inexplorado do Turismo Brasileiro</h2>
+                <p class="text-lg text-gray-700 mb-8">
+                    Esta análise explora a visão de Vinícius Lummertz para o turismo brasileiro entre 2020 e a data atual. Examinamos seus diagnósticos sobre os entraves estruturais e as oportunidades estratégicas para transformar o Brasil em uma potência turística global.
+                </p>
+                <div class="bg-accent p-6 rounded-lg shadow-inner">
+                    <p class="text-xl italic text-text font-semibold">"Onde há turismo, não há desemprego. O mundo inteiro já aprendeu isso. Há uma corrida mundial pelos empregos do turismo."</p>
+                    <p class="text-right mt-2 font-bold">- Vinícius Lummertz</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="diagnostico" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary">Diagnóstico: Os Entraves ao Desenvolvimento</h2>
+                <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+                    Vinícius Lummertz consistentemente aponta uma série de desafios estruturais que limitam o potencial do Brasil. Estes não são problemas isolados, mas sim barreiras interconectadas que afetam toda a cadeia de valor do turismo.
+                </p>
+            </div>
+            <div id="challenges-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            </div>
+        </section>
+
+        <section id="caminhos" class="py-20 bg-accent rounded-lg">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary">Caminhos para o Futuro: Objetivos Estratégicos</h2>
+                 <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+                    Para superar os desafios, Lummertz propõe um conjunto de objetivos focados em modernização, abertura de mercado e criação de um ambiente de negócios favorável.
+                </p>
+            </div>
+            <div id="solutions-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 px-6">
+            </div>
+        </section>
+        
+        <section id="ecossistema" class="py-20">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold text-primary">A Visão Ecossistêmica do Turismo</h2>
+                <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+                    A complexidade defendida por Lummertz alinha-se à concepção de turismo como um ecossistema, popularizada no Brasil por teóricos como Mário Carlos Beni e Marutschka Moesch.
+                </p>
+            </div>
+            <div class="flex flex-col md:flex-row items-center justify-center gap-8 p-6 bg-white shadow-lg rounded-lg">
+                <div class="w-full p-4 bg-primary text-white rounded-lg text-center">
+                    <h3 class="font-bold text-xl">SISTUR (Sistema de Turismo)</h3>
+                </div>
+                <div class="w-full grid grid-cols-1 md:grid-cols-2 gap-4 text-center">
+                    <div class="p-4 bg-secondary text-white rounded-lg shadow-md">
+                        <h4 class="font-semibold">Conjunto das Relações Ambientais</h4>
+                        <p class="text-sm">Social, Econômico, Político, Ecológico, Cultural</p>
+                    </div>
+                    <div class="p-4 bg-accent text-text rounded-lg shadow-md">
+                        <h4 class="font-semibold">Conjunto da Organização Estrutural</h4>
+                        <p class="text-sm">Mercado, Oferta, Demanda, Distribuição</p>
+                    </div>
+                    <div class="p-4 bg-accent text-text rounded-lg shadow-md">
+                        <h4 class="font-semibold">Conjunto das Ações Operacionais</h4>
+                        <p class="text-sm">Promoção, Fomento, Planejamento, Gestão</p>
+                    </div>
+                     <div class="p-4 bg-secondary text-white rounded-lg shadow-md">
+                        <h4 class="font-semibold">Infraestrutura</h4>
+                        <p class="text-sm">Básica e de Apoio ao Turismo</p>
+                    </div>
+                </div>
+            </div>
+             <p class="mt-8 text-center max-w-3xl mx-auto text-gray-600">
+                Os desafios apontados por Lummertz, como burocracia (Relações Ambientais - Político) e falta de infraestrutura, impactam todo o sistema. As soluções, como a melhoria do ambiente de negócios, afetam positivamente múltiplas dimensões do SISTUR.
+            </p>
+        </section>
+
+        <section id="dados" class="py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary">O Turismo Brasileiro em Números</h2>
+                <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+                    Os dados do período pós-pandemia mostram uma recuperação, principalmente impulsionada pelo turismo doméstico. No entanto, ao comparar com potências globais e regionais, o Brasil ainda apresenta significativo potencial não explorado.
+                </p>
+            </div>
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-secondary">Chegadas de Turistas Internacionais (Pré-Pandemia)</h3>
+                    <div class="chart-container">
+                        <canvas id="internationalArrivalsChart"></canvas>
+                    </div>
+                </div>
+                <div>
+                    <h3 class="text-xl font-semibold text-center mb-4 text-secondary">Contribuição do Turismo no PIB (Estimativa)</h3>
+                    <div class="chart-container">
+                        <canvas id="pibContributionChart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quiz" class="py-20 bg-accent rounded-lg">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-primary">Quiz Interativo: Desvende o Brasil!</h2>
+                <p class="max-w-3xl mx-auto mt-4 text-gray-600">
+                    Teste seus conhecimentos sobre o Brasil com uma charada divertida! Escolha um assunto, tente adivinhar e, como recompensa, descubra um dado interessante sobre o mercado de trabalho brasileiro.
+                </p>
+            </div>
+            <div class="max-w-2xl mx-auto bg-white p-8 rounded-lg shadow-lg">
+                <div class="mb-6">
+                    <label for="subject-filter" class="block text-lg font-semibold text-text mb-2">Escolha um assunto:</label>
+                    <select id="subject-filter" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-primary">
+                        <option value="">Selecione um assunto</option>
+                        <option value="música">Música</option>
+                        <option value="esportes">Esportes</option>
+                        <option value="negócios">Negócios</option>
+                        <option value="feiras">Feiras e Eventos</option>
+                        <option value="religioso">Religioso</option>
+                        <option value="outros">Outros</option>
+                    </select>
+                </div>
+
+                <div class="text-center mb-6">
+                    <button id="generate-riddle-btn" class="bg-primary text-white px-6 py-3 rounded-md hover:bg-primary/90 transition-colors duration-300 disabled:opacity-50" disabled>Gerar Charada</button>
+                </div>
+
+                <div id="quiz-content" class="hidden">
+                    <div class="loading-spinner"></div>
+                    <div class="text-center mb-6">
+                        <img id="quiz-image" src="" alt="Imagem relacionada à charada" class="w-full h-48 object-cover rounded-md mb-4 mx-auto" onerror="this.onerror=null;this.src='https://placehold.co/400x300/F4F1DE/3D405B?text=Quiz'">
+                        <p id="riddle-text" class="text-xl font-semibold text-text mb-4"></p>
+                    </div>
+                    <div class="mb-6">
+                        <input type="text" id="user-answer" placeholder="Sua resposta aqui..." class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-secondary">
+                    </div>
+                    <div class="text-center">
+                        <button id="reveal-answer-btn" class="bg-secondary text-white px-6 py-3 rounded-md hover:bg-secondary/90 transition-colors duration-300">Revelar Resposta e Dados</button>
+                    </div>
+                </div>
+
+                <div id="quiz-result" class="mt-8 p-4 bg-gray-100 rounded-md hidden">
+                    <p id="answer-reveal" class="text-lg font-semibold text-primary mb-2"></p>
+                    <p id="foreigners-data" class="text-lg font-semibold text-text"></p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="bg-text text-white py-6 text-center">
+        <p>Análise Interativa &copy; 2024. Desenvolvido como uma ferramenta de síntese e visualização de dados.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const challenges = [
+                {
+                    title: 'Burocracia e "Custo Brasil"',
+                    icon: '📋',
+                    description: 'Legislação complexa, alta carga tributária (como o IOF) e a insegurança jurídica afastam investimentos e encarecem a operação turística, diminuindo competitividade.'
+                },
+                {
+                    title: 'Falta de Estratégia Contínua',
+                    icon: '🗺️',
+                    description: 'A ausência de um plano de Estado de longo prazo, resistente a mudanças de governo, impede a consolidação de uma política turística robusta e a execução consistente.'
+                },
+                {
+                    title: 'Infraestrutura Deficiente',
+                    icon: '🏗️',
+                    description: 'Apesar dos avanços, a infraestrutura de acesso, como aeroportos regionais e estradas, e a de atrativos, como parques nacionais, ainda é inadequada para o potencial.'
+                },
+                {
+                    title: 'Atraso na Modernização',
+                    icon: '⚡',
+                    description: 'O Brasil se mantém conservador em pautas já consolidadas em outros países, como a regulamentação de resorts integrados (cassinos), que poderiam ser grandes geradores de renda.'
+                },
+                {
+                    title: 'Promoção Internacional Tímida',
+                    icon: '📢',
+                    description: 'O investimento em promoção e marketing do Brasil no exterior é baixo comparado a outros países, resultando em um desconhecimento das diversas ofertas turísticas.'
+                },
+                {
+                    title: 'Insegurança',
+                    icon: '🚨',
+                    description: 'A percepção de insegurança é um dos maiores detratores da imagem do Brasil no exterior, impactando diretamente a decisão de viagem de turistas internacionais.'
+                }
+            ];
+
+            const solutions = [
+                {
+                    title: 'Melhorar Ambiente de Negócios',
+                    icon: '💼',
+                    description: 'Simplificar a legislação, realizar reformas estruturais e reduzir a carga tributária para atrair capital estrangeiro e nacional, tornando o setor mais dinâmico.'
+                },
+                {
+                    title: 'Concessões e Privatizações',
+                    icon: '🏛️',
+                    description: 'Acelerar a concessão de parques nacionais e a privatização de aeroportos e outros ativos turísticos para a iniciativa privada, garantindo investimentos e modernização.'
+                },
+                {
+                    title: 'Abertura de Mercado',
+                    icon: '🌐',
+                    description: 'Permitir 100% de capital estrangeiro em companhias aéreas e incentivar a entrada de novas empresas, aumentando a concorrência, a conectividade e reduzindo o preço.'
+                },
+                {
+                    title: 'Visto Eletrônico e Facilitação',
+                    icon: '✈️',
+                    description: 'Expandir o programa de vistos eletrônicos para mais países estratégicos e reduzir as barreiras de entrada para turistas, uma medida de baixo custo e alto impacto.'
+                },
+                {
+                    title: 'Foco na "Economia do Visitante"',
+                    icon: '🎭',
+                    description: 'Ampliar o conceito de turismo para "economia do visitante", englobando cultura, eventos, negócios e saúde, para desenvolver uma cadeia produtiva mais ampla e resiliente.'
+                },
+                {
+                    title: 'Desenvolvimento Regional Integrado',
+                    icon: '🗺️',
+                    description: 'Promover o desenvolvimento não apenas por município, mas por regiões turísticas coesas, que compartilham infraestrutura e identidade, fortalecendo os destinos.'
+                }
+            ];
+
+            const challengesGrid = document.getElementById('challenges-grid');
+            challenges.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white p-6 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300';
+                card.innerHTML = `
+                    <div class="flex items-center mb-3">
+                        <span class="text-4xl mr-4">${item.icon}</span>
+                        <h3 class="text-lg font-bold text-primary">${item.title}</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm hidden">${item.description}</p>
+                `;
+                challengesGrid.appendChild(card);
+            });
+            
+            const solutionsGrid = document.getElementById('solutions-grid');
+            solutions.forEach(item => {
+                const card = document.createElement('div');
+                card.className = 'bg-white p-6 rounded-lg shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-300';
+                card.innerHTML = `
+                    <div class="flex items-center mb-3">
+                        <span class="text-4xl mr-4">${item.icon}</span>
+                        <h3 class="text-lg font-bold text-primary">${item.title}</h3>
+                    </div>
+                    <p class="text-gray-600 text-sm hidden">${item.description}</p>
+                `;
+                solutionsGrid.appendChild(card);
+            });
+
+            document.querySelectorAll('#challenges-grid > div, #solutions-grid > div').forEach(card => {
+                card.addEventListener('click', () => {
+                    card.querySelector('p').classList.toggle('hidden');
+                });
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+            
+            document.querySelectorAll('.nav-link').forEach(link => {
+                link.addEventListener('click', () => {
+                    if(!mobileMenu.classList.contains('hidden')){
+                        mobileMenu.classList.add('hidden');
+                    }
+                });
+            });
+
+
+            const internationalArrivalsCtx = document.getElementById('internationalArrivalsChart').getContext('2d');
+            new Chart(internationalArrivalsCtx, {
+                type: 'bar',
+                data: {
+                    labels: ['França', 'Espanha', 'EUA', 'México', 'Argentina', 'Brasil'],
+                    datasets: [{
+                        label: 'Chegadas de Turistas Internacionais (em milhões)',
+                        data: [89.4, 83.7, 79.3, 45.0, 7.3, 6.3],
+                        backgroundColor: '#8D9B6A',
+                        borderColor: '#3D405B',
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    indexAxis: 'y',
+                    scales: {
+                        x: {
+                            beginAtZero: true
+                        }
+                    },
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        title: {
+                            display: true,
+                            text: 'Fonte: OMT (Dados de 2019, pré-pandemia)'
+                        }
+                    }
+                }
+            });
+
+            const pibContributionCtx = document.getElementById('pibContributionChart').getContext('2d');
+            new Chart(pibContributionCtx, {
+                type: 'doughnut',
+                data: {
+                    labels: ['Contribuição do Turismo', 'Outros Setores'],
+                    datasets: [{
+                        label: 'Contribuição para o PIB',
+                        data: [7.7, 92.3],
+                        backgroundColor: ['#E07A5F', '#F4F1DE'],
+                        borderColor: ['#3D405B', '#d1ccc0'],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                     plugins: {
+                        legend: {
+                           position: 'top',
+                        },
+                        title: {
+                            display: true,
+                            text: 'Contribuição Direta e Indireta do Turismo no PIB do Brasil (%)'
+                        }
+                    }
+                }
+            });
+            
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-link');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        navLinks.forEach(link => {
+                            link.classList.remove('active-nav');
+                            if (link.getAttribute('href').substring(1) === entry.target.id) {
+                                link.classList.add('active-nav');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: "-50% 0px -50% 0px" });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+
+            // Quiz Interativo Logic
+            const subjectFilter = document.getElementById('subject-filter');
+            const generateRiddleBtn = document.getElementById('generate-riddle-btn');
+            const quizContent = document.getElementById('quiz-content');
+            const quizImage = document.getElementById('quiz-image');
+            const riddleText = document.getElementById('riddle-text');
+            const userAnswer = document.getElementById('user-answer');
+            const revealAnswerBtn = document.getElementById('reveal-answer-btn');
+            const quizResult = document.getElementById('quiz-result');
+            const answerReveal = document.getElementById('answer-reveal');
+            const foreignersData = document.getElementById('foreigners-data');
+            const loadingSpinner = document.querySelector('.loading-spinner');
+
+            const quizSubjects = {
+                'música': {
+                    imagePrompt: 'Carnaval do Rio de Janeiro - ilustração vetorial minimalista',
+                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Carnaval+Rio',
+                    answer: 'Carnaval'
+                },
+                'esportes': {
+                    imagePrompt: 'Estádio de futebol brasileiro - ilustração vetorial minimalista',
+                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Estadio+Futebol',
+                    answer: 'Futebol'
+                },
+                'negócios': {
+                    imagePrompt: 'Skyline de São Paulo - ilustração vetorial minimalista',
+                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Sao+Paulo+Negocios',
+                    answer: 'Feira de Negócios'
+                },
+                'feiras': {
+                    imagePrompt: 'Centro de exposições no Brasil - ilustração vetorial minimalista',
+                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Feira+Eventos',
+                    answer: 'Feira Internacional'
+                },
+                'religioso': {
+                    imagePrompt: 'Cristo Redentor - ilustração vetorial minimalista',
+                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Cristo+Redentor',
+                    answer: 'Cristo Redentor'
+                },
+                'outros': {
+                    imagePrompt: 'Cataratas do Iguaçu - ilustração vetorial minimalista',
+                    imageUrl: 'https://placehold.co/400x300/F4F1DE/3D405B?text=Cataratas+Iguacu',
+                    answer: 'Amazônia'
+                }
+            };
+
+            subjectFilter.addEventListener('change', () => {
+                if (subjectFilter.value) {
+                    generateRiddleBtn.disabled = false;
+                    quizContent.classList.add('hidden');
+                    quizResult.classList.add('hidden');
+                    userAnswer.value = '';
+                } else {
+                    generateRiddleBtn.disabled = true;
+                }
+            });
+
+            generateRiddleBtn.addEventListener('click', async () => {
+                const selectedSubject = subjectFilter.value;
+                if (!selectedSubject) return;
+
+                quizContent.classList.remove('hidden');
+                loadingSpinner.style.display = 'block';
+                riddleText.textContent = '';
+                quizImage.src = '';
+                quizResult.classList.add('hidden');
+                userAnswer.value = '';
+                revealAnswerBtn.disabled = false;
+
+                const subjectInfo = quizSubjects[selectedSubject];
+                quizImage.src = subjectInfo.imageUrl; // Usando a URL específica da imagem
+
+                try {
+                    let chatHistory = [];
+                    const prompt = `Crie uma charada divertida e curta sobre o tema "${selectedSubject}" no contexto do Brasil. A charada deve ter uma resposta clara e ser no máximo duas frases.`;
+                    chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+                    const payload = { contents: chatHistory };
+                    const apiKey = "AIzaSyAORSjNULpj2T95fL5qfEeb9O5qdcLdF6w";
+                    const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+                    const result = await response.json();
+                    if (result.candidates && result.candidates.length > 0 &&
+                        result.candidates[0].content && result.candidates[0].content.parts &&
+                        result.candidates[0].content.parts.length > 0) {
+                        riddleText.textContent = result.candidates[0].content.parts[0].text;
+                    } else {
+                        riddleText.textContent = 'Não foi possível gerar a charada. Tente novamente.';
+                    }
+                } catch (error) {
+                    console.error('Erro ao chamar a API do Gemini:', error);
+                    riddleText.textContent = 'Erro ao carregar a charada. Verifique sua conexão ou tente mais tarde.';
+                } finally {
+                    loadingSpinner.style.display = 'none';
+                }
+            });
+
+            revealAnswerBtn.addEventListener('click', () => {
+                const selectedSubject = subjectFilter.value;
+                const subjectInfo = quizSubjects[selectedSubject];
+                
+                answerReveal.textContent = `A resposta é: ${subjectInfo.answer}!`;
+                foreignersData.textContent = `Em 2024, o Brasil abriu cerca de 71.000 postos de trabalho formais (CLT) para estrangeiros no mercado de trabalho.`;
+                quizResult.classList.remove('hidden');
+                revealAnswerBtn.disabled = true;
+            });
+        });
+    </script>
+</body>
+</html>
